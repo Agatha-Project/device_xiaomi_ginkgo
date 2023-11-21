@@ -23,18 +23,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-# Inherit some common Cherish stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
-
-# CherishOS
-CHERISH_BUILD_TYPE=OFFICIAL
-
-# Maintainer
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=Agatha
+# Inherit some common Voltage stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
 # Rom Specific Flags
-TARGET_BOOT_ANIMATION_RES := 720
+TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_QUICK_TAP  := true
@@ -43,11 +36,8 @@ TARGET_ENABLE_BLUR := true
 USE_PIXEL_CHARGING := true
 TARGET_BUILD_APERTURE_CAMERA := false
 
-# Gapps
-WITH_GMS := true
-
 # Device identifier
-PRODUCT_NAME := cherish_ginkgo
+PRODUCT_NAME := voltage_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8/8T

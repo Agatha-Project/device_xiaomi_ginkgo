@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cherish_ginkgo.mk
+    $(LOCAL_DIR)/voltage_ginkgo.mk
 
 COMMON_LUNCH_CHOICES := \
-    cherish_ginkgo-user \
-    cherish_ginkgo-userdebug \
-    cherish_ginkgo-eng
+    voltage_ginkgo-user \
+    voltage_ginkgo-userdebug \
+    voltage_ginkgo-eng
