@@ -55,23 +55,23 @@ on boot
     # Enable suspend to idle mode to reduce latency during suspend/resume
     write /sys/power/mem_sleep "s2idle"
 
-service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc_snxxx@1.2-service
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     override
     class hal
     user nfc
     group nfc
     disabled
 
-service vendor.secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element_snxxx@1.2-service
+service nqnfc_1_2_hal_service /vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
     override
     class hal
-    user secure_element
-    group secure_element
+    user nfc
+    group nfc
     disabled
 
 on property:ro.product.device=willow
     enable vendor.nfc_hal_service
-    enable vendor.secure_element_hal_service
+    enable nqnfc_1_2_hal_service
 
 on property:ro.boot.hwversion=*
     setprop vendor.boot.hwversion ${ro.boot.hwversion}

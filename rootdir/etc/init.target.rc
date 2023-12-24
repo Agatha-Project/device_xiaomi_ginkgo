@@ -376,6 +376,12 @@ service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    oneshot
    disabled
 
+service adsprpcd /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+   disabled
+
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
     user system
@@ -487,3 +493,7 @@ on post-fs && property:ro.boot.product.hardware.sku=willow
 
    # Enable suspend to RAM
     write /sys/power/mem_sleep "deep"
+
+on post-fs-data && property:ro.boot.product.hardware.sku=willow
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    mkdir /data/vendor/nfc/param 0770 nfc nfc

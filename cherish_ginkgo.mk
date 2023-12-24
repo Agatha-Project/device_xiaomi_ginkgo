@@ -30,8 +30,12 @@ $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 CHERISH_BUILD_TYPE=OFFICIAL
 
 # Maintainer
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=Agatha
+CHERISH_MAINTAINER := Agatha
+
+# Cherish Flags
+CHERISH_CHIPSET := SDM665
+CHERISH_BATTERY := 4000mAh
+CHERISH_DISPLAY := 1080x2340
 
 # Rom Specific Flags
 TARGET_BOOT_ANIMATION_RES := 720
